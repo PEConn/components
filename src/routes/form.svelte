@@ -61,4 +61,7 @@
 table {
     margin: 20px;
 }
+
+tr:nth-child(even) {background: #eeeeee;}
+tr:nth-child(odd) {background: #ffffff;}
 </style>
