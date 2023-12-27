@@ -1,31 +1,18 @@
 <script>
     import Filter from "./filter.svelte";
 
-    /**
-     * @type {string[]} keys
-     */
+    /** @type {string[]} */
     export let keys = [];
     
-    /**
-     * @type {Record<string, string>[]} rows
-     */
+    /** @type {Record<string, string>[]} */
     export let rows = [];
 
-    // TODO: Generate this from keys.
-    let searchTerms = {
-        MANUFACTURER: "",
-        COMP_TYPE: "",
-        SERIES: "",
-        COMP_IDENT: "",
-        GENDER: "",
-        CABLE_SIZE_AWG: "",
-        CABLE_SIZE_MM2: "",
-        MATES_WITH: "",
-        NOTES: ""
-    }
+    /** @type {Record<string, string>} */
+    let searchTerms = {}
+    keys.forEach((key) => searchTerms[key] = "")
 
     $: filteredList = rows.filter(item => {
-        return keys.every(key => 
+        return keys.every(key =>
             item[key].includes(searchTerms[key])
         );
     });
