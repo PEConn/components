@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import Form from "./form.svelte";
+
+    export let data;
+
+    const components = data.components;
+    const keys = data.components.keys;
+    const rows = data.components.rows;
+</script>
+
+<h1>Components</h1>
+
+<Form keys={keys} rows={rows}/>
+
+Columns:
+{#each keys as key}
+    {key},&nbsp;
+{/each}
