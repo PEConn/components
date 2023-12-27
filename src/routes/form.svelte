@@ -37,15 +37,20 @@
         rows={filteredList} />
 {/each}
 
-<ul>
+<table>
+    <tr>
+        {#each keys as key}
+            <td>{key}</td>
+        {/each}
+    </tr>
     {#each filteredList as c}
-        <li>
+        <tr>
             {#each keys as key}
-                {c[key]},&nbsp;
+                <td>{c[key]}</td>
             {/each}
-        </li>
+        </tr>
     {/each}
-</ul>
+</table>
 
 <style>
 

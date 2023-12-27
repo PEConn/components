@@ -11,8 +11,3 @@
 <h1>Components</h1>
 
 <Form keys={keys} rows={rows}/>
-
-Columns:
-{#each keys as key}
-    {key},&nbsp;
-{/each}
