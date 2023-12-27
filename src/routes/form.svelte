@@ -31,16 +31,18 @@
     });
 </script>
 
+<div class="filters">
 {#each keys as key}
     <Filter propertyName={key}
         bind:searchTerm={searchTerms[key]}
         rows={filteredList} />
 {/each}
+</div>
 
 <table>
     <tr>
         {#each keys as key}
-            <td>{key}</td>
+            <th>{key}</th>
         {/each}
     </tr>
     {#each filteredList as c}
@@ -53,5 +55,10 @@
 </table>
 
 <style>
-
+.filters {
+    margin: 20px;
+}
+table {
+    margin: 20px;
+}
 </style>
